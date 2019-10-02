@@ -1,3 +1,5 @@
-<div>
-  <h1>Welcome to Application</h1>
-  </div>
+<h1 class="bg-primary text-white text-center">Welcome to Vtalent Application</h1>
+<form *ngIf="!isRegister">
+  <button class="btn btn-primary btn-lg" type="button" (click)="showRegForm()">Registration</button>
+</form>
+<app-workspace *ngIf="isRegister"></app-workspace>
