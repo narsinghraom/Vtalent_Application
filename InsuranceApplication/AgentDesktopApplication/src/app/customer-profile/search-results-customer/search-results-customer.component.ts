@@ -14,11 +14,8 @@ import { Observable } from 'rxjs';
 })
 export class SearchResultsCustomerComponent implements OnInit, OnChanges , DoCheck{
   constructor(private customerService:CustomerService) {
-    this.customerService.getCustomerList().subscribe(data =>{  
-      this.customersList =data;  
-     
-      }) 
-    this.dataSource = new MatTableDataSource<Customer>(this.customersList);
+   
+    
    }  
    customersList: Customer[]; 
   displayedColumns: string[] = ['customerFirstName', 'customerLastName', 'customerDOB', 'customerAddress'];
@@ -28,16 +25,19 @@ export class SearchResultsCustomerComponent implements OnInit, OnChanges , DoChe
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
 ngOnChanges(){
- 
+  this.dataSource = new MatTableDataSource<Customer>(this.customersList);
 }
 ngDoCheck(){
-  this.dataSource.paginator = this.paginator;
-  this.dataSource.sort = this.sort;
+  this.customerService.getCustomerList().subscribe(data =>{  
+    this.customersList =data;  
+   console.log("the data "+data);
+    }) 
   
 }
 
   ngOnInit() {
-    
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   applyFilter(filterValue: string) {
