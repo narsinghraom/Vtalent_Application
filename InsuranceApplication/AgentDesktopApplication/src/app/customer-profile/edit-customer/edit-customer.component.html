@@ -3,49 +3,42 @@
   <div class="col-sm-4"></div>  
   <div class="col-sm-4" >  
     <div [hidden]="formSubmit" style="width: 400px;">  
-      <form [formGroup]="customerForm" #saveCustomerData (ngSubmit)="saveCustomerData()">  
+      <form [formGroup]="customerForm"  (ngSubmit)="saveCustomerData()">  
           <div class="form-group">  
-              <label for="name">First Name</label>  
-              <input type="text" class="form-control"  formControlName="first_Name" data-toggle="tooltip"   
+              <label for="customerFirstName">First Name</label>  
+              <input type="text" class="form-control"  formControlName="customerFirstName" data-toggle="tooltip"   
                  data-placement="right" title="Enter First Name" >  
-              <div class="alert alert-danger" *ngIf = "(first_Name.invalid)"   
+                 <div class="alert alert-danger" *ngIf = "(GetCustomerFirstName.touched) && (GetCustomerFirstName.invalid)"   
                 style="margin-top: 5px;">  
-                  <span *ngIf="first_Name.errors.required">First Name is Required</span>  
-                    <span *ngIf = "first_Name.errors.minlength">   
-                        MinLength Error   
+                  <span *ngIf="GetCustomerFirstName.errors.required">Customer First Name is Required</span>  
+                    <span *ngIf = "GetCustomerFirstName.errors.minlength">   
+                        MinLength 3 character's   
                     </span>                     
                 </div>  
           </div>  
           <div class="form-group">  
-            <label for="name">Last Name</label>  
-            <input type="text" class="form-control"  formControlName="last_name" data-toggle="tooltip"   
-               data-placement="right" title="Enter last Name" >  
-            <div class="alert alert-danger" *ngIf = "(last_name.invalid)"   
-              style="margin-top: 5px;">  
-                <span *ngIf="last_name.errors.required">Last Name is Required</span>  
-                  <span *ngIf = "last_name.errors.minlength">   
-                      MinLength Error   
-                  </span>                     
-              </div>  
+            <label for="customerLastName">Last Name</label>  
+            <input type="text" class="form-control"  formControlName="customerLastName" data-toggle="tooltip"   
+               data-placement="right" title="Enter last Name" >   
+               <div class="alert alert-danger" *ngIf = "(GetCustomerLastName.touched) && (GetCustomerLastName.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="GetCustomerLastName.errors.required">Customer Last Name is Required</span>  
+                    <span *ngIf = "GetCustomerLastName.errors.minlength">   
+                        MinLength 3 character's   
+                    </span>                     
+                </div> 
         </div>  
           <div class="form-group">  
-              <label for="name">Customer DOB</label>  
-              <input type="text" class="form-control" formControlName="dob"   
+              <label for="customerDOB">Customer DOB</label>  
+              <input type="text" class="form-control" formControlName="customerDOB"   
                 data-toggle="tooltip" data-placement="right" title="Enter Customer DOB">  
-                <div class="alert alert-danger" *ngIf = "(dob.touched) && (dob.invalid)"   
-                style="margin-top: 5px;">  
-                  <span *ngIf="dob.errors.required">DOB Required</span>                     
-                </div>  
           </div>  
     
           <div class="form-group">  
-            <label for="name">ZipCode</label>  
-            <input type="text" class="form-control" formControlName="zipCode"   
+            <label for="customerAddress">ZipCode</label>  
+            <input type="text" class="form-control" formControlName="customerAddress"   
               data-toggle="tooltip" data-placement="right" title="Enter Zip Code">  
-              <div class="alert alert-danger" *ngIf = "(zipCode.touched) && (zipCode.invalid)"   
-              style="margin-top: 5px;">  
-                <span *ngIf="zipCode.errors.required">ZipCode Required</span>                     
-              </div>  
+              
         </div>  
     
           <button type="submit" class="btn btn-success">Submit</button>  
@@ -57,7 +50,7 @@
 <div class="row">  
   <div class="col-sm-4"></div>  
   <div class="col-sm-4">  
-      <div [hidden]="!submitted">  
+      <div [hidden]="!formSubmit">  
          <h4>Customer SuccessFully Added!</h4>  
          <button (click)="addCustomerForm()" class='btn btn-primary'>Add More</button>  
       </div>        

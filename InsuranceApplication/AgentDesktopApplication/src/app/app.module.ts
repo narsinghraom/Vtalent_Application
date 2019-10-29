@@ -7,20 +7,31 @@ import { EditCustomerComponent } from './customer-profile/edit-customer/edit-cus
 import { SearchCustomerComponent } from './customer-profile/search-customer/search-customer.component';
 import { SearchResultsCustomerComponent } from './customer-profile/search-results-customer/search-results-customer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UpdateCustomerComponent } from './customer-profile/update-customer/update-customer.component';
+import {MatTableModule} from '@angular/material/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     EditCustomerComponent,
     SearchCustomerComponent,
-    SearchResultsCustomerComponent
+    SearchResultsCustomerComponent,
+    UpdateCustomerComponent
   ],
   imports: [
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
