@@ -14,8 +14,8 @@ customer : Customer = new Customer();
 formSubmit = false;
 customerForm = new FormGroup(
   {
-    customerFirstName : new FormControl('Narsingh',[Validators.required,Validators.minLength(3)]),
-    customerLastName : new FormControl('Mahankali',[Validators.required,Validators.minLength(3)]),
+    customerFirstName : new FormControl('',[Validators.required,Validators.minLength(3)]),
+    customerLastName : new FormControl('',[Validators.required,Validators.minLength(3)]),
     customerAddress : new FormControl('500011',[Validators.required,Validators.minLength(3)]),
     customerDOB : new FormControl('12-01-2012',[Validators.required])
   }
