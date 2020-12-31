@@ -125,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AgentDesktopApplication"
+    }
+  },
+  "defaultProject": "AgentDesktopApplication",
+  "cli": {
+    "analytics": true
+  }
 }
