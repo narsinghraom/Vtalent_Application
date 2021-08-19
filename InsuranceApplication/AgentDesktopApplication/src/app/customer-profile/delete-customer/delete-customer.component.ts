@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Customer } from 'src/app/shared/model/customer';
 import { CustomerService } from 'src/app/shared/services/customer.service';
+=======
+import { Component, OnInit } from '@angular/core';
+>>>>>>> b7dbf8c961dca41b33c2ccfb9eea5eb68f9237ea
 
 @Component({
   selector: 'app-delete-customer',
@@ -11,6 +15,7 @@ import { CustomerService } from 'src/app/shared/services/customer.service';
 })
 export class DeleteCustomerComponent implements OnInit {
 
+<<<<<<< HEAD
   customer : Customer = new Customer();
  
   constructor(private customerService: CustomerService) {
@@ -53,4 +58,11 @@ addCustomerForm(){
   this.CustomerForm.reset();
 }
 
+=======
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+>>>>>>> b7dbf8c961dca41b33c2ccfb9eea5eb68f9237ea
 }
