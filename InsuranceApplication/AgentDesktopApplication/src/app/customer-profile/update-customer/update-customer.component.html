@@ -1,0 +1,84 @@
+<h3>Update Customer</h3>  
+<div class="row custid">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div *ngIf="!formSubmit" style="width: 400px;">  
+      <form [formGroup]="UpdateCustomerForm"  (ngSubmit)="onSubmit()">  
+          <div class="form-group">  
+              <label for="customerReferanceId">Customer Id</label>  
+              <input type="text" class="form-control"  formControlName="customerReferanceId" data-toggle="tooltip"   
+                 data-placement="right" title="Enter First Name" >  
+                 <div class="alert alert-danger" *ngIf = "(GetCustomerReferanceId.touched) && (GetCustomerReferanceId.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="GetCustomerReferanceId.errors.required">Customer First Name is Required</span>  
+                    <span *ngIf = "GetCustomerReferanceId.errors.minlength">   
+                        MinLength 3 character's   
+                    </span>                     
+                </div>  
+          </div>  
+          
+          <button type="submit" class="btn btn-success">Submit</button>  
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  
+
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div *ngIf="formSubmit" style="width: 400px;">  
+      <form [formGroup]="customerForm"  (ngSubmit)="saveCustomerData()">  
+          <div class="form-group">  
+              <label for="customerFirstName">First Name</label>  
+              <input type="text" class="form-control"  formControlName="customerFirstName" data-toggle="tooltip" 
+                 data-placement="right" title="Enter First Name" >
+                 <div class="alert alert-danger" *ngIf = "(GetCustomerFirstName.touched) && (GetCustomerFirstName.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="GetCustomerFirstName.errors.required">Customer First Name is Required</span>  
+                    <span *ngIf = "GetCustomerFirstName.errors.minlength">   
+                        MinLength 3 character's   
+                    </span>                     
+                </div>  
+          </div>  
+          <div class="form-group">  
+            <label for="customerLastName">Last Name</label>  
+            <input type="text" class="form-control"  formControlName="customerLastName" data-toggle="tooltip"   
+               data-placement="right" title="Enter last Name" >   
+               <div class="alert alert-danger" *ngIf = "(GetCustomerLastName.touched) && (GetCustomerLastName.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="GetCustomerLastName.errors.required">Customer Last Name is Required</span>  
+                    <span *ngIf = "GetCustomerLastName.errors.minlength">   
+                        MinLength 3 character's   
+                    </span>                     
+                </div> 
+        </div>  
+          <div class="form-group">  
+              <label for="customerDOB">Customer DOB</label>  
+              <input type="text" class="form-control" formControlName="customerDOB"   
+                data-toggle="tooltip" data-placement="right" title="Enter Customer DOB">  
+          </div>  
+    
+          <div class="form-group">  
+            <label for="customerAddress">ZipCode</label>  
+            <input type="text" class="form-control" formControlName="customerAddress"   
+              data-toggle="tooltip" data-placement="right" title="Enter Zip Code">  
+              
+        </div>  
+    
+          <button type="submit" class="btn btn-success">Submit</button>  
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4">  
+      <div *ngIf="isHidden">  
+         <h4>Customer SuccessFully Updated!</h4>  
+         <button (click)="addCustomerForm()" class='btn btn-primary'>Update More</button>  
+      </div>        
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  

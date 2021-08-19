@@ -4,4 +4,9 @@ export class Customer {
     customerLastName:string;
     customerAddress:string;
     customerDOB:string;
+
+    // getCustomerData(){
+    //     return this.customerFirstName;
+    // }
+
 }

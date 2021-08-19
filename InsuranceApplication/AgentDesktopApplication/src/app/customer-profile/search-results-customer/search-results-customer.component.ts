@@ -26,7 +26,7 @@ export class SearchResultsCustomerComponent implements OnInit, OnChanges , DoChe
     
    }  
    customersList: Customer[]; 
-  displayedColumns: string[] = ['customerFirstName', 'customerLastName', 'customerDOB', 'customerAddress'];
+  displayedColumns: string[] = ['customerReferanceId','customerFirstName', 'customerLastName', 'customerDOB', 'customerAddress'];
   dataSource: MatTableDataSource<Customer>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;

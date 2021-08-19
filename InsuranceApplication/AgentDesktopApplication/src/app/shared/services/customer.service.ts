@@ -30,8 +30,21 @@ export class CustomerService {
   }  
   
   deleteCustomer(referanceId: number): Observable<any> {  
-    return this.httpService.delete(CUSTOMERURL.CREATE_CUSTOMER +'/'+'${referanceId}', { responseType: 'text' });  
-  }  
+    return this.httpService.delete(CUSTOMERURL.DELETE_CUSTOMER +'/'+referanceId, { responseType: 'text' });  
+    // return this.httpService.delete(CUSTOMERURL.DELETE_CUSTOMER +'/'+'DS-0001', { responseType: 'text' });
+  } 
+  
+  UpdateCustomer(CustData:object):Observable<any>{
+    return this.httpService.post(CUSTOMERURL.UPDATE_CUSTOMER,CustData)
+  }
+
+  getCustDataByID(referanceId: number): Observable<Object> {  
+    return this.httpService.get(CUSTOMERURL.GET_CUSTOMER_BYID +'/'+referanceId, { responseType: 'text' }).pipe(
+      catchError(this.errorHandler))
+
+    // return this.httpService.get(CUSTOMERURL.GET_CUSTOMER_BYID +'/'+'DS-0120', { responseType: 'text' }).pipe(
+    //   catchError(this.errorHandler))
+  } 
   
   getCustomer(customerZipCode: string,customerAddress:string): Observable<Object> {
     params : new HttpParams().set('customerZipCode',customerZipCode)

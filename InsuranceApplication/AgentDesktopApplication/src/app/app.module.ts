@@ -12,6 +12,10 @@ import {MatTableModule} from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { DeleteCustomerComponent } from './customer-profile/delete-customer/delete-customer.component';
+import 'reflect-metadata';
+import { plainToClass } from 'class-transformer';
+
 
 
 @NgModule({
@@ -20,7 +24,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     EditCustomerComponent,
     SearchCustomerComponent,
     SearchResultsCustomerComponent,
-    UpdateCustomerComponent
+    UpdateCustomerComponent,
+    DeleteCustomerComponent,
   ],
   imports: [
     FormsModule,
@@ -31,7 +36,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatTableModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatPaginatorModule
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

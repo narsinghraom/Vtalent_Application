@@ -2,6 +2,12 @@
   
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
+
+      <!-- Customer Id -->
+      <ng-container matColumnDef="customerReferanceId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Customer Id </th>
+        <td mat-cell *matCellDef="let row "> {{row.customerReferanceId}} </td>
+      </ng-container>
   
       <!-- FirstName Column -->
       <ng-container matColumnDef="customerFirstName">
@@ -12,7 +18,7 @@
       <!-- LastName Column -->
       <ng-container matColumnDef="customerLastName">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Customer Last Name</th>
-        <td mat-cell *matCellDef="let row"> {{row.customerLastName}}% </td>
+        <td mat-cell *matCellDef="let row"> {{row.customerLastName}} </td>
       </ng-container>
   
       <!-- DOB Column -->

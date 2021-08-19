@@ -1,0 +1,36 @@
+<h3>Delete Customer</h3>  
+<div class="row custid">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div *ngIf="!formSubmit" style="width: 400px;">  
+      <form [formGroup]="CustomerForm"  (ngSubmit)="onSubmit()">  
+          <div class="form-group">  
+              <label for="customerReferanceId">Customer Id</label>  
+              <input type="text" class="form-control"  formControlName="customerReferanceId" data-toggle="tooltip"   
+                 data-placement="right" title="Enter First Name" >  
+                 <div class="alert alert-danger" *ngIf = "(GetCustomerReferanceId.touched) && (GetCustomerReferanceId.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="GetCustomerReferanceId.errors.required">Customer First Name is Required</span>  
+                    <span *ngIf = "GetCustomerReferanceId.errors.minlength">   
+                        MinLength 3 character's   
+                    </span>                     
+                </div>  
+          </div>  
+          
+          <button type="submit" class="btn btn-success">Submit</button>  
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  
+
+<div class="row">  
+    <div class="col-sm-4"></div>  
+    <div class="col-sm-4">  
+        <div *ngIf="formSubmit">  
+           <h4>Customer SuccessFully Deleted!</h4>  
+           <button (click)="addCustomerForm()" class='btn btn-primary'>Delete More</button>  
+        </div>        
+    </div>  
+    <div class="col-sm-4"></div>  
+  </div> 
